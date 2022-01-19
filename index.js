@@ -26,4 +26,4 @@ app.use('/', forAllRoutes);
 mongoose.connect(process.env.DB_CONNECTION_1, { useNewUrlParser: true, useUnifiedTopology:true}, (e) => e? console.log('Database Error: '+ JSON.stringify(e)):console.log('Connected to Library Database!...'));
 
 //server connection
-app.listen(process.env.SERVER_PORT, () => console.log(`Server listening on port ${process.env.SERVER_PORT}...`));
+app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}...`));
