@@ -25,7 +25,7 @@ app.use('/',cors(), forAllRoutes);
 
 const MONGO_URI =' mongodb+srv://kiokovincent:kiokokioko@firstcluster.sg8iw.mongodb.net/libSystem?'
 //database connection 1
-mongoose.connect(process.env.DB_CONNECTION_1||MONGO_URI, { useNewUrlParser: true, useUnifiedTopology:true}, (e) => e? console.log('Database Error: '+ JSON.stringify(e)):console.log('Connected to Library Database!...'));
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology:true}, (e) => e? console.log('Database Error: '+ JSON.stringify(e)):console.log('Connected to Library Database!...'));
 
 //server connection
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}...`));
