@@ -8,11 +8,11 @@ import adminRoutes from './routes/admin/adminRoutes.js';
 import userRoutes from './routes/users/userRoutes.js';
 import forAllRoutes from './routes/generalRoutes.js';
 
-app.use(cors());
 
 //framework
 const app = express();
 dotenv.config();
+app.use(cors());
 
 //middlewares
 app.use(bodyParser.json({ limit:'30mb', extended:true}));
