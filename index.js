@@ -21,10 +21,11 @@ app.use(bodyParser.urlencoded({ limit:'30mb', extended:true}));
 //routers here
 app.use('/users', userRoutes);
 app.use('/admin', adminRoutes);
-app.use('/', forAllRoutes);
+app.use('/',cors(), forAllRoutes);
 
 //database connection 1
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology:true}, (e) => e? console.log('Database Error: '+ JSON.stringify(e)):console.log('Connected to Library Database!...'));
+const MONGO_URI ='mongodb+srv://kiokovincent:kiokokioko@firstcluster.sg8iw.mongodb.net/libSystem?'
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology:true}, (e) => e? console.log('Database Error: '+ JSON.stringify(e)):console.log('Connected to Library Database!...'));
 
 //server connection
 app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}...`));
